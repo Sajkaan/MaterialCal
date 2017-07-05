@@ -22,7 +22,7 @@ public class DataConfig {
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
-        Resource config = new ClassPathResource("application.properties");
+        Resource config = new ClassPathResource("hibernate.cfg.xml");
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setConfigLocation(config);
         sessionFactory.setPackagesToScan(env.getProperty("materialCal.entity.package"));
