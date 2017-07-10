@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Material</title>
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/normalize.css" type="text/css">
-    <link rel="stylesheet" href=""
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout :: head"></head>
 
-
-
-</head>
 <body>
+  <div class="wrap">
+
+    <header th:replace="ka"></header>
+
+    <div class="container">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="images/trailer.jpg" />
+          </div>
+          <div class="back">
+            <h2><a href="#">New Trailer</a></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="images/water.jpg" />
+          </div>
+          <div class="back">
+            <h2><a href="#">Find Trailer</a></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="images/water.jpg" />
+          </div>
+          <div class="back">
+            <h2><a href="#">Edit Trailer</a></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="images/water.jpg" />
+          </div>
+          <div class="back">
+            <h2 class="menu"><a href="#">Delete Trailer</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer th:replace="layout:footer"></footer>
 
 </body>
 </html>

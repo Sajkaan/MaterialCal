@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Material</title>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" th:href="@{normalize.css}"/>
+    <link rel="stylesheet" th:href="@{styles.css}" />
+</head>
+
+<body>
+
+        <header class="main-header" th:fragment="header">
+            <div class="container">
+                <h1 class="name">Material Calculator</h1>
+            </div>
+        </header>
+
+
+        <footer class="main-footer" th:fragment="footer">
+            <span>&copy;Safet Garic</span>
+        </footer>
+</body>
+</html>

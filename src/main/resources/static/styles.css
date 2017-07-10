@@ -1,0 +1,170 @@
+/* =================================
+    Base Element Styles
+   =================================*/
+   * {
+     box-sizing: border-box;
+   }
+
+   body {
+     line-height: 1.6;
+     font-family: Slabo;
+   }
+
+   label {
+     padding: 10px;
+     padding-top: 20px;
+   }
+
+   a {
+   	color: #3867D6;
+   	font-family: Slabo;
+   	font-style: normal;
+   }
+
+   table {
+     border-collapse: collapse;
+   }
+
+   td,th {
+     width: 10rem;
+     height: 2rem;
+     border: 1px solid #999;
+     text-align: center;
+   }
+
+   img {
+     padding: 10px 5px 5px 5px;
+     width: 33%;
+   }
+
+   ul {
+     list-style: inline;
+     padding: 0;
+     margin: 0;
+   }
+
+   li{
+     color: #000000;
+     font-family: Slabo;
+     margin-right: 0;
+     display: block;
+     width: 50px;
+     padding-right: 2em;
+   }
+
+   input {
+    width: 120px;
+    height: 25px;
+    padding:5px;
+    border:1px solid #ccc;
+    border-radius: 5%;
+   }
+
+
+   /* =================================
+        Base Layout Styles
+      =================================*/
+
+      .main-header {
+        background: #3867D6;
+        padding: 1em 0;
+        text-align: center;
+      }
+
+      .main-footer {
+      	color: black;
+        text-align: center;
+        padding: 2em 0;
+        background: #d9e4ea;
+      }
+
+      .main-inf {
+        text-align: center;
+      }
+
+      .part-input {
+        padding-top: 10px;
+      }
+
+      .container {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+
+      /* entire container, keeps perspective */
+      .flip-container {
+      	perspective: 1000px;
+      }
+      	/* flip the pane when hovered */
+      	.flip-container:hover .flipper, .flip-container.hover .flipper {
+      		transform: rotateY(180deg);
+      	}
+
+      .flip-container, .front, .back {
+      	width: 100%;
+      }
+
+      /* flip speed goes here */
+      .flipper {
+      	transition: 0.6s;
+      	transform-style: preserve-3d;
+
+      	position: relative;
+      }
+
+      /* hide back of pane during swap */
+      .front, {
+      	backface-visibility: hidden;
+
+      	position: relative;
+      	top: 0;
+      	left: 0;
+      }
+
+      .back {
+       backface-visibility: hidden;
+
+       position: fixed;
+       top: 1em;
+       left: 2em;
+       text-align: center;
+       text-transform: full-width;
+     }
+
+      /* front pane, placed above back */
+      .front {
+      	z-index: 2;
+      	/* for firefox 31 */
+      	transform: rotateY(0deg);
+      }
+
+      /* back, initially hidden pane */
+      .back {
+      	transform: rotateY(180deg);
+      }
+
+      .name {
+        color:#F7F311;
+      }
+
+
+
+
+   /* =================================
+       Media Queries
+      =================================*/
+
+    @media(min-width: 769px) {
+
+      .wrap {
+        min-height: calc(100vh - 89px);
+      }
+
+      .container {
+        padding: 10px;
+        max-width: 1000px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+    }
