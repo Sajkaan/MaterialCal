@@ -13,6 +13,9 @@ public class Trailer {
     private Long id;
 
     @NotNull
+    private String name;
+
+    @NotNull
     private String orderTag;
 
     @ManyToMany
@@ -23,6 +26,14 @@ public class Trailer {
     private double brutoWeight;
 
     public Trailer() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getId() {
