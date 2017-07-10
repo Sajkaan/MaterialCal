@@ -1,4 +1,4 @@
-package com.sajkaan.controller;
+package com.sajkaan.web.controller;
 
 import com.sajkaan.service.PartService;
 import com.sajkaan.service.TrailerService;
@@ -15,6 +15,12 @@ public class NewTrailer {
 
     @Autowired
     private PartService partService;
+
+
+    @RequestMapping("/")
+    public String home(Model model) {
+        return "index";
+    }
 
     @RequestMapping("/newTrailer")
     public String newTrailerAdding(Model model){
