@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Material</title>
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="static/normalize.css" type="text/css">
-    <link rel="stylesheet" href="static/styles.css" />
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
 
 <body>
   <div class="wrap">
 
-    <header class="main-header">
-      <div class="container">
-        <h1 class="name">Material Calculator</h1>
-      </div>
-    </header>
+      <header th:replace="layout :: header"></header>
 
     <div class="container">
       <div class="main-inf">
         <label>Name:</label><input type="text" />
         <label>Order:</label><input type="text" />
-        <hr>
+        <hr/>
       </div>
       <div class="part-input">
         <table >
@@ -50,8 +40,6 @@
     </div>
   </div>
 
-  <footer class="main-footer">
-    <span>&copy;Safet Garic</span>
-  </footer>
+  <footer th:replace="layout ::footer"></footer>
 </body>
 </html>
