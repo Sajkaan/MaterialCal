@@ -1,5 +1,6 @@
 package com.sajkaan.web.controller;
 
+import com.sajkaan.model.Part;
 import com.sajkaan.service.PartService;
 import com.sajkaan.service.TrailerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class NewTrailer {
 
     @RequestMapping("/newTrailer")
     public String newTrailerAdding(Model model){
+
+        if(!model.containsAttribute("part")) {
+            model.addAttribute("part", new Part());
+        }
+
 
         return "new";
     }

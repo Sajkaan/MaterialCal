@@ -25,15 +25,18 @@
   			<td>Thickness</td>
         <td>Weight Bruto(kg)</td>
   		</tr>
-  		<tr>
-  			<td><input type="text"/></td>
-  			<td><input type="text"/></td>
-  			<td><input type="text"/></td>
-  			<td><input type="text"/></td>
-  			<td><input type="text"/></td>
-  			<td><input type="text"/></td>
-        <td><input type="text"/></td>
-  		</tr>
+		<form  method="post" action="post" th:object="${part}">
+			<tr>
+				<input type="hidden" th:field="*{id}"/>
+				<td><input type="text" th:field="*{partName}"/></td>
+				<td><input type="text" th:field="*{material}"/></td>
+				<td><input type="text" th:field="*{weightNeto}"/></td>
+				<td><input type="text" th:field="*{height}"/></td>
+				<td><input type="text" th:field="*{length}"/></td>
+				<td><input type="text" th:field="*{thickness}"/></td>
+				<td><input type="text"/></td>
+			</tr>
+		</form>
   	</tbody>
   </table>
       </div>
