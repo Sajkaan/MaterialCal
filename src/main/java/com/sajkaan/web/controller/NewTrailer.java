@@ -30,8 +30,6 @@ public class NewTrailer {
     @RequestMapping("/newTrailer")
     public String newTrailerAdding(Model model){
 
-        model.addAttribute("part", partService.findAll());
-
         if(!model.containsAttribute("part")) {
             model.addAttribute("part", new Part());
         }
@@ -46,8 +44,6 @@ public class NewTrailer {
         }
 
         partService.save(part);
-
-        Part oa = partService.findOne(part.getId());
 
         return "redirect:/newTrailer";
     }

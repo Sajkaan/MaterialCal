@@ -14,7 +14,7 @@ public class PartServiceImpl implements PartService {
     @Autowired
     private PartRepository partRepository;
 
-    @Override
+/*    @Override
     public Iterable<Part> findAll() {
         return partRepository.findAll();
     }
@@ -22,7 +22,7 @@ public class PartServiceImpl implements PartService {
     @Override
     public Part findOne(Long id) {
         return partRepository.findOne(id);
-    }
+    }*/
 
     @Override
     public void save(Part part) {

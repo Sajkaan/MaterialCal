@@ -26,7 +26,7 @@
 					<td>Weight Bruto(kg)</td>
 				</tr>
 				<form method="post" th:action="@{/newTrailer}" th:object="${part}">
-					<tr>
+					<tr id="input-elements">
 						<input type="hidden" th:field="*{id}"/>
 						<td><input type="text" th:field="*{partName}"/></td>
 						<td><input type="text" th:field="*{material}"/></td>
