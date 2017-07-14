@@ -14,7 +14,7 @@
         <hr/>
       </div>
       <div class="part-input">
-        <table>
+        <table id="tab">
 			<tbody>
 				<tr>
 					<td>Part name</td>
@@ -28,18 +28,18 @@
 				<form method="post" th:action="@{/newTrailer}" th:object="${part}">
 					<tr id="input-elements">
 						<input type="hidden" th:field="*{id}"/>
-						<td><input type="text" th:field="*{partName}"/></td>
+						<td><input id="partName" type="text" th:field="*{partName}"/></td>
 						<td><input type="text" th:field="*{material}"/></td>
 						<td><input type="text" th:field="*{weightNeto}"/></td>
 						<td><input type="text" th:field="*{height}"/></td>
 						<td><input type="text" th:field="*{length}"/></td>
 						<td><input type="text" th:field="*{thickness}"/></td>
 						<td><input type="text"/></td>
-						<td><button type="submit">Add Part</button></td>
 					</tr>
 				</form>
 			</tbody>
   		</table>
+		  <button id="newRowBtn" onclick="newRow()">New Row</button>
       </div>
     </div>
   </div>
