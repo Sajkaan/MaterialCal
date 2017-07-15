@@ -65,14 +65,30 @@ function fillTable(newPart) {
   }
 }
 
+function clearInput() {
+	document.getElementById("partName").value = "";
+	document.getElementById("material").value = "";
+	document.getElementById("netoWeight").value = "";
+	document.getElementById("height").value = "";
+	document.getElementById("leng").value = "";
+	document.getElementById("thickness").value = "";
+	document.getElementById("brutoWeight").value = "";
+}
+
+function validateForm(newPart) {
+	if (newPart.partName == "" || newPart.material == "" || newPart.netoWeight == "") {
+		clearInput();
+	} else {
+		fillTable(newPart);
+    	partArray.push(newPart);
+    	clearInput();
+	}
+}
+
 function newRow() {
+
 	var brutoWeight = leng.value * height.value;
     var newPart = new part(partName.value, material.value, netoWeight.value, height.value, leng.value, thickness.value, brutoWeight);
 
-    fillTable(newPart);
-
-    partArray.push(newPart);
-    clearInput();
+    validateForm(newPart);
 }
-
-
