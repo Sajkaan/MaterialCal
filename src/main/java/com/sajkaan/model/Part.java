@@ -22,11 +22,11 @@ public class Part {
     @NotNull
     private String material;
 
-    private double height;
+    private int height;
 
-    private double length;
+    private int length;
 
-    private double thickness;
+    private int thickness;
 
     private double weightBruto;
 
@@ -64,27 +64,27 @@ public class Part {
         this.material = material;
     }
 
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
-    public double getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
-    public double getThickness() {
+    public int getThickness() {
         return thickness;
     }
 
-    public void setThickness(double thickness) {
+    public void setThickness(int thickness) {
         this.thickness = thickness;
     }
 
