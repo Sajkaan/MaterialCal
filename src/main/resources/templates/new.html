@@ -25,7 +25,7 @@
 					<td>Thickness</td>
 					<td>Weight Bruto(kg)</td>
 				</tr>
-				<form method="post" th:action="@{/newTrailer}" th:object="${part}">
+				<form method="post" th:action="@{/}" th:object="${part}">
 					<tr id="elementsInput">
 						<input type="hidden" th:field="*{id}"/>
 						<td><input oninput="onInput()" id="partName" type="text" th:field="*{partName}"/></td>
@@ -36,11 +36,14 @@
 						<td><input oninput="onInput()" id="thickness" type="text" th:field="*{thickness}"/></td>
 						<td><input id="brutoWeight" type="text"/></td>
 					</tr>
-				</form>
 			</tbody>
   		</table>
 		  <button id="newRowBtn" onclick="newRow()">New Row</button>
       </div>
+		<hr/>
+					<button id="submit" type="submit">Submit</button>
+					<button id="sort">Sort</button>
+				</form>
     </div>
   </div>
 
