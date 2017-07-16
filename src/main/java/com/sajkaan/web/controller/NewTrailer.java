@@ -1,16 +1,15 @@
 package com.sajkaan.web.controller;
 
+import com.google.gson.JsonObject;
 import com.sajkaan.model.Part;
 import com.sajkaan.service.PartService;
 import com.sajkaan.service.TrailerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class NewTrailer {
@@ -36,16 +35,11 @@ public class NewTrailer {
         return "new";
     }
 
-    @RequestMapping(value = "/newTrailer", method = RequestMethod.POST)
-    public String addPart(@Valid Part part, BindingResult result) {
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String update() {
 
-        if (result.hasErrors()) {
-            return "redirect:/newTrailer";
-        }
-
-        partService.save(part);
-
-        return "redirect:/newTrailer";
+        return "index";
     }
+
 
 }

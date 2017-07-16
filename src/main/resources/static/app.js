@@ -1,4 +1,4 @@
-var partArray = [];
+var partArray = []; // list which needs to be send to the controller
 
 function part(partName,material,netoWeight,height, leng, thickness, brutoWeight){
 	this.partName = partName;
