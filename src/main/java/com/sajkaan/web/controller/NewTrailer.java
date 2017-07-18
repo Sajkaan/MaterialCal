@@ -35,11 +35,4 @@ public class NewTrailer {
         return "new";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String update() {
-
-        return "index";
-    }
-
-
 }

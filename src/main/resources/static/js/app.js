@@ -1,3 +1,4 @@
+/*
 var partArray = []; // list which needs to be send to the controller
 
 function part(partName,material,netoWeight,height, leng, thickness, brutoWeight){
@@ -7,27 +8,16 @@ function part(partName,material,netoWeight,height, leng, thickness, brutoWeight)
 	this.height = height;
 	this.leng = leng;
 	this.thickness = thickness;
-	this.brutoWeight = brutoWeight;
+	this.weightBruto = weightBruto;
 }
 
 function onInput() {
 	var partName = document.getElementById("partName").value;
 	var material = document.getElementById("material").value;
-	var netoWeight = document.getElementById("netoWeight").value;
+	var weightNeto = document.getElementById("weightNeto").value;
 	var height = document.getElementById("height").value;
 	var leng = document.getElementById("leng").value;
 	var thickness = document.getElementById("thickness").value;
-}
-
-function clearInput() {
-	document.getElementById("partName").value = '';
-	document.getElementById("partName").value = '';
-	document.getElementById("material").value = '';
-	document.getElementById("netoWeight").value = '';
-	document.getElementById("height").value = '';
-	document.getElementById("leng").value = '';
-	document.getElementById("thickness").value = '';
-	document.getElementById("brutoWeight").value = '';
 }
 
 function fillTable(newPart) {
@@ -44,7 +34,7 @@ function fillTable(newPart) {
            		cell1.innerHTML = newPart.material;
            		break;
            	case 2:
-           		cell1.innerHTML = newPart.netoWeight;
+           		cell1.innerHTML = newPart.weightNeto;
            		break;
            	case 3:
            		cell1.innerHTML = newPart.height;
@@ -56,7 +46,7 @@ function fillTable(newPart) {
            		cell1.innerHTML = newPart.thickness;
            		break;
            	case 6:
-           		cell1.innerHTML = newPart.brutoWeight;
+           		cell1.innerHTML = newPart.weightBruto;
            		break;
            	default:
            		cell1.innerHTML = "Error";
@@ -65,18 +55,18 @@ function fillTable(newPart) {
   }
 }
 
-/*function clearInput() {
+function clearInput() {
 	document.getElementById("partName").value = "";
 	document.getElementById("material").value = "";
-	document.getElementById("netoWeight").value = "";
+	document.getElementById("weightNeto").value = "";
 	document.getElementById("height").value = "";
 	document.getElementById("leng").value = "";
 	document.getElementById("thickness").value = "";
-	document.getElementById("brutoWeight").value = "";
-}*/
+	document.getElementById("weightBruto").value = "";
+}
 
 function validateForm(newPart) {
-	if (newPart.partName == "" || newPart.material == "" || newPart.netoWeight == "") {
+	if (newPart.partName == "" || newPart.material == "" || newPart.weightNeto == "") {
 		clearInput();
 	} else {
 		fillTable(newPart);
@@ -87,8 +77,9 @@ function validateForm(newPart) {
 
 function newRow() {
 
-	var brutoWeight = leng.value * height.value;
-    var newPart = new part(partName.value, material.value, netoWeight.value, height.value, leng.value, thickness.value, brutoWeight);
+	var weightBruto = leng.value * height.value;
+    var newPart = new part(partName.value, material.value, weightNeto.value, height.value, leng.value, thickness.value, weightBruto);
 
     validateForm(newPart);
 }
+*/

@@ -25,18 +25,19 @@
 					<td>Thickness</td>
 					<td>Weight Bruto(kg)</td>
 				</tr>
-					<tr>
-						<form id="elementsInput">
+					<form id="elementsInput">
+						<tr>
 							<td><input oninput="onInput()" id="partName" type="text" /></td>
 							<td><input oninput="onInput()" id="material" type="text"/></td>
-							<td><input oninput="onInput()" id="netoWeight" type="text" /></td>
-							<td><input oninput="onInput()" id="height" type="text" /></td>
-							<td><input oninput="onInput()" id="leng" type="text" /></td>
-							<td><input oninput="onInput()" id="thickness" type="text" /></td>
-							<td><input id="brutoWeight" type="text"/></td>
-							<button type="button" id="newRowBtn" onclick="newRow()">New Row</button>
-						</form>
-					</tr>
+							<td><input oninput="onInput()" id="weightNeto" type="number" /></td>
+							<td><input oninput="onInput()" id="height" type="number" /></td>
+							<td><input oninput="onInput()" id="leng" type="number" /></td>
+							<td><input oninput="onInput()" id="thickness" type="number" /></td>
+							<td><input id="weightBruto" type="number"/></td>
+						</tr>
+						<button id="newRowBtn" onclick="newRow()">New Row</button>
+					</form>
+
 			</tbody>
   		</table>
       </div>

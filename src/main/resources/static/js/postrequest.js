@@ -12,13 +12,13 @@
 
           // PREP FORM DATA
           var formData = {
-              partName : $("partName").val(),
-              material : $("material").val(),
-              netoWeight : $("netoWeight").val() / 1000,
-              height : $("height").val(),
-              leng : $("leng").val(),
-              thickness : $("thickness").val()
-              brutoWeight : height * leng;
+              partName : $("#partName").val(),
+              material : $("#material").val(),
+              weightNeto : $("#weightNeto").val(),
+              height : $("#height").val(),
+              leng : $("#leng").val(),
+              thickness : $("#thickness").val(),
+              weightBruto :  $("#thickness").val() * $("#thickness").val()
           }
 
       	// DO POST
@@ -42,11 +42,11 @@
       }
 
       function resetData(){
-              $("partName").val(""),
-              $("material").val(""),
-              $("netoWeight").val(""),
-              $("height").val(""),
-              $("leng").val(""),
-              $("thickness").val("")
+              $("#partName").val(""),
+              $("#material").val(""),
+              $("#weightNeto").val(""),
+              $("#height").val(""),
+              $("#leng").val(""),
+              $("#thickness").val("")
       }
   })
