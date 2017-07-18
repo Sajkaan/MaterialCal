@@ -65,7 +65,7 @@ function fillTable(newPart) {
   }
 }
 
-function clearInput() {
+/*function clearInput() {
 	document.getElementById("partName").value = "";
 	document.getElementById("material").value = "";
 	document.getElementById("netoWeight").value = "";
@@ -73,7 +73,7 @@ function clearInput() {
 	document.getElementById("leng").value = "";
 	document.getElementById("thickness").value = "";
 	document.getElementById("brutoWeight").value = "";
-}
+}*/
 
 function validateForm(newPart) {
 	if (newPart.partName == "" || newPart.material == "" || newPart.netoWeight == "") {
