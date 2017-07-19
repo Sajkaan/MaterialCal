@@ -24,6 +24,7 @@ public class RestWebController {
 
     @RequestMapping(value = "newTrailer/postParts", method = RequestMethod.POST)
     public Response postPart(@RequestBody Part part) {
+
         parts.save(part);
         Response response = new Response("Done", part);
 

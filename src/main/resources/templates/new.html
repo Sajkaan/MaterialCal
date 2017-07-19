@@ -14,38 +14,37 @@
         <hr/>
       </div>
       <div class="part-input">
-        <table id="tab">
-			<tbody>
-				<tr id="tableHeader">
-					<td>Part name</td>
-					<td>Material </td>
-					<td>Weight Neto(gr) </td>
-					<td>Height</td>
-					<td>Length </td>
-					<td>Thickness</td>
-					<td>Weight Bruto(kg)</td>
-				</tr>
-					<form id="elementsInput">
-						<tr>
-							<td><input oninput="onInput()" id="partName" type="text" /></td>
-							<td><input oninput="onInput()" id="material" type="text"/></td>
-							<td><input oninput="onInput()" id="weightNeto" type="number" /></td>
-							<td><input oninput="onInput()" id="height" type="number" /></td>
-							<td><input oninput="onInput()" id="leng" type="number" /></td>
-							<td><input oninput="onInput()" id="thickness" type="number" /></td>
-							<td><input id="weightBruto" type="number"/></td>
-						</tr>
-						<button id="newRowBtn" onclick="newRow()">New Row</button>
-					</form>
-
-			</tbody>
-  		</table>
+		  <form id="elementsInput">
+			<table id="tab">
+				<tbody>
+					<tr id="tableHeader">
+						<td>Part name</td>
+						<td>Material </td>
+						<td>Weight Neto(gr) </td>
+						<td>Height</td>
+						<td>Length </td>
+						<td>Thickness</td>
+						<td>Weight Bruto(kg)</td>
+					</tr>
+					<tr>
+						<td><input oninput="onInput()" id="partName" type="text" /></td>
+						<td><input oninput="onInput()" id="material" type="text"/></td>
+						<td><input oninput="onInput()" id="weightNeto" type="number" /></td>
+						<td><input oninput="onInput()" id="height" type="number" /></td>
+						<td><input oninput="onInput()" id="leng" type="number" /></td>
+						<td><input oninput="onInput()" id="thickness" type="number" /></td>
+						<td><input id="weightBruto" type="number"/></td>
+					</tr>
+				</tbody>
+			</table>
+			  <button id="newRowBtn">New Row</button>
+		  </form>
       </div>
-					<hr/>
-				<form method="post" th:action="@{/}">
-					<button id="submit" type="submit">Submit</button>
-					<button id="sort">Sort</button>
-				</form>
+		<hr/>
+			<form method="post" th:action="@{/}">
+				<button id="submit" type="submit">Submit</button>
+				<button id="sort">Sort</button>
+			</form>
     </div>
   </div>
 
