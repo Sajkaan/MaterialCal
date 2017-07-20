@@ -14,8 +14,8 @@ import java.util.List;
 @Controller
 public class NewTrailer {
 
-    @Autowired
-    private TrailerService trailerService;
+/*    @Autowired
+    private TrailerService trailerService;*/
 
     @Autowired
     private PartService partService;

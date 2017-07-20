@@ -13,6 +13,7 @@ public class TrailerServiceImpl implements TrailerService {
     private TrailerRepository trailerRepository;
 
     @Override
+
     public Iterable<Trailer> findAll() {
         return trailerRepository.findAll();
     }
