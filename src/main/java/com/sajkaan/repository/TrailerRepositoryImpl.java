@@ -32,16 +32,41 @@ public class TrailerRepositoryImpl implements TrailerRepository {
 
     @Override
     public Trailer findById(Long id) {
-        return null;
+
+        Session session = sessionFactory.openSession();
+
+        Trailer trailer = session.get(Trailer.class, id);
+
+        session.close();
+
+        return trailer;
     }
 
     @Override
     public void save(Trailer trailer) {
 
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        session.saveOrUpdate(trailer);
+
+        session.getTransaction().commit();
+
+        session.close();
     }
 
     @Override
     public void delete(Trailer trailer) {
 
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        session.delete(trailer);
+
+        session.getTransaction().commit();
+
+        session.close();
     }
 }
