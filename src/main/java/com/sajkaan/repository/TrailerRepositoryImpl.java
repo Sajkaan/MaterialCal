@@ -25,9 +25,11 @@ public class TrailerRepositoryImpl implements TrailerRepository {
 
         criteriaQuery.from(Trailer.class);
 
-        List<Trailer> parts = session.createQuery(criteriaQuery).getResultList();
+        List<Trailer> trailers = session.createQuery(criteriaQuery).getResultList();
 
         session.close();
+
+        return trailers;
     }
 
     @Override
