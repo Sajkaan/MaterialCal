@@ -22,6 +22,10 @@ public class Part {
     @NotNull
     private String material;
 
+    private int quantity;
+
+    private double weightNetoTotal;
+
     private int height;
 
     private int length;
@@ -29,6 +33,8 @@ public class Part {
     private int thickness;
 
     private double weightBruto;
+
+    private double weightBrutoTotal;
 
     public Part(){}
 
@@ -64,6 +70,22 @@ public class Part {
         this.material = material;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getWeightNetoTotal() {
+        return weightNetoTotal;
+    }
+
+    public void setWeightNetoTotal(double weightNetoTotal) {
+        this.weightNetoTotal = weightNetoTotal;
+    }
+
     public int getHeight() {
         return height;
     }
@@ -96,6 +118,14 @@ public class Part {
         this.weightBruto = weightBruto;
     }
 
+    public double getWeightBrutoTotal() {
+        return weightBrutoTotal;
+    }
+
+    public void setWeightBrutoTotal(double weightBrutoTotal) {
+        this.weightBrutoTotal = weightBrutoTotal;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -104,10 +134,13 @@ public class Part {
         Part part = (Part) o;
 
         if (Double.compare(part.weightNeto, weightNeto) != 0) return false;
-        if (Double.compare(part.height, height) != 0) return false;
-        if (Double.compare(part.length, length) != 0) return false;
-        if (Double.compare(part.thickness, thickness) != 0) return false;
+        if (quantity != part.quantity) return false;
+        if (Double.compare(part.weightNetoTotal, weightNetoTotal) != 0) return false;
+        if (height != part.height) return false;
+        if (length != part.length) return false;
+        if (thickness != part.thickness) return false;
         if (Double.compare(part.weightBruto, weightBruto) != 0) return false;
+        if (Double.compare(part.weightBrutoTotal, weightBrutoTotal) != 0) return false;
         if (id != null ? !id.equals(part.id) : part.id != null) return false;
         if (partName != null ? !partName.equals(part.partName) : part.partName != null) return false;
         return material != null ? material.equals(part.material) : part.material == null;
@@ -122,13 +155,15 @@ public class Part {
         temp = Double.doubleToLongBits(weightNeto);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (material != null ? material.hashCode() : 0);
-        temp = Double.doubleToLongBits(height);
+        result = 31 * result + quantity;
+        temp = Double.doubleToLongBits(weightNetoTotal);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(length);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(thickness);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + height;
+        result = 31 * result + length;
+        result = 31 * result + thickness;
         temp = Double.doubleToLongBits(weightBruto);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(weightBrutoTotal);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

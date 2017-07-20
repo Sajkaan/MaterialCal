@@ -20,7 +20,8 @@
 					<tr id="tableHeader">
 						<td>Part name</td>
 						<td>Material </td>
-						<td>Weight Neto(gr) </td>
+						<td>Quantity</td>
+						<td>Weight Neto(gr)</td>
 						<td>Height</td>
 						<td>Length </td>
 						<td>Thickness</td>
@@ -29,6 +30,7 @@
 					<tr>
 						<td><input oninput="onInput()" id="partName" type="text" /></td>
 						<td><input oninput="onInput()" id="material" type="text"/></td>
+						<td><input id="quantity" type="number"/></td>
 						<td><input oninput="onInput()" id="weightNeto" type="number" /></td>
 						<td><input oninput="onInput()" id="height" type="number" /></td>
 						<td><input oninput="onInput()" id="leng" type="number" /></td>
@@ -36,6 +38,8 @@
 						<td><input id="weightBruto" type="number"/></td>
 					</tr>
 				</tbody>
+				<label>TOTAL NETO:</label>
+				<label>TOTAL BRUTO:</label>
 			</table>
 			  <button id="newRowBtn">New Row</button>
 		  </form>
