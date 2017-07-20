@@ -1,6 +1,6 @@
 package com.sajkaan.web.controller;
 
-import com.google.gson.JsonObject;
+
 import com.sajkaan.model.Part;
 import com.sajkaan.service.PartService;
 import com.sajkaan.service.TrailerService;
@@ -14,8 +14,8 @@ import java.util.List;
 @Controller
 public class NewTrailer {
 
-/*    @Autowired
-    private TrailerService trailerService;*/
+    @Autowired
+    private TrailerService trailerService;
 
     @Autowired
     private PartService partService;
