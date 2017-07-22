@@ -1,8 +1,15 @@
   $( document ).ready(function() {
 
   	var url = window.location;
+    var partArray = [];
 
-  	// SUBMIT FORM
+    $("#elementsInput").submit (function (event){
+        event.preventDefault();
+        ajaxPost();
+    });
+
+
+  	// SUBMIT FORM FOR PARTS
       $("#elementsInput").submit (function (event){
           event.preventDefault();
           ajaxPost();
@@ -42,7 +49,7 @@
            	});
 
         fillTable(formData);
-
+        partArray.push(formData);
         }
 
       	// Reset FormData after Posting
