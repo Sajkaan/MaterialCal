@@ -13,6 +13,7 @@
    label {
      padding: 10px;
      padding-top: 20px;
+     width:100%;
    }
 
    a {
@@ -53,7 +54,7 @@
    }
 
    input {
-    width: 120px;
+    /*width: 120px;*/
     height: 25px;
     padding:5px;
     border:1px solid #ccc;
@@ -145,6 +146,22 @@
 
       .name {
         color:#F7F311;
+      }
+
+      .results {
+        display: flex;
+      }
+
+      #partName, #material {
+        width: 120px;
+      }
+
+      #weightNeto,#weightNetoTotal, #height, #leng, #thickness, #weightBruto {
+        width:80px;
+      }
+
+      #quantity {
+        width:50px;
       }
 
       #newRowBtn, #sort, #submit {

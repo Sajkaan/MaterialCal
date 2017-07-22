@@ -18,29 +18,35 @@
 			<table id="tab">
 				<tbody>
 					<tr id="tableHeader">
-						<td>Part name</td>
-						<td>Material </td>
-						<td>Quantity</td>
-						<td>Weight Neto(gr)</td>
-						<td>Height</td>
-						<td>Length </td>
-						<td>Thickness</td>
-						<td>Weight Bruto(kg)</td>
+						<th>Part name</th>
+						<th>Material </th>
+						<th>Quantity</th>
+						<th>Neto(gr)</th>
+						<th>Neto Total</th>
+						<th>Height</th>
+						<th>Length </th>
+						<th>Thickness</th>
+						<th>Bruto</th>
+						<th>Bruto Total</th>
 					</tr>
 					<tr>
 						<td><input oninput="onInput()" id="partName" type="text" /></td>
 						<td><input oninput="onInput()" id="material" type="text"/></td>
 						<td><input id="quantity" type="number"/></td>
 						<td><input oninput="onInput()" id="weightNeto" type="number" /></td>
+						<td id="weightNetoTotal" oninput="onInput()"></td>
 						<td><input oninput="onInput()" id="height" type="number" /></td>
 						<td><input oninput="onInput()" id="leng" type="number" /></td>
 						<td><input oninput="onInput()" id="thickness" type="number" /></td>
 						<td><input id="weightBruto" type="number"/></td>
+						<td id=""></td>
 					</tr>
 				</tbody>
-				<label>TOTAL NETO:</label>
-				<label>TOTAL BRUTO:</label>
 			</table>
+			  <div class="results">
+			  	<label>TOTAL NETO:</label>
+			  	<label>TOTAL BRUTO:</label>
+			  </div>
 			  <button id="newRowBtn">New Row</button>
 		  </form>
       </div>
