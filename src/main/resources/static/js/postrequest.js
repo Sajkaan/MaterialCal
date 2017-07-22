@@ -15,10 +15,13 @@
               partName : $("#partName").val(),
               material : $("#material").val(),
               weightNeto : $("#weightNeto").val(),
+              quantity : $("#quantity").val(),
+              weightNetoTotal : $("#weightNeto").val() * $("#quantity").val(),
               height : $("#height").val(),
-              leng : $("#leng").val(),
+              length : $("#leng").val(),
               thickness : $("#thickness").val(),
-              weightBruto :  $("#thickness").val() * $("#thickness").val()
+              weightBruto : brutoCalculation(),
+              weightBrutoTotal : brutoCalculation() * $("#quantity").val()
           }
 
         if(validateForm(formData) == true) {
@@ -48,7 +51,8 @@
       }
 
       function validateForm() {
-      	if ($("#partName").val() == "" || $("#material").val() == "" || $("#weightNeto").val() == "") {
+      	if ($("#partName").val() == "" || $("#material").val() == "" || $("#weightNeto").val() == ""
+      	        || $("#quantity").val() == "" ) {
       		return false;
       	} else {
       	    return true;
@@ -59,40 +63,54 @@
       	var table = document.getElementById("tab");
       	var row = table.insertRow(1);
 
-          for (var i = 0; i < 7; i++) {
+          for (var i = 0; i < 10; i++) {
           	var cell1 = row.insertCell(i);
       	    switch(i) {
                   case 0:
-                 		cell1.innerHTML = $("#partName").val();
-                 		break;
-                 	case 1:
-                 		cell1.innerHTML = $("#material").val();
-                 		break;
-                 	case 2:
-                 		cell1.innerHTML = $("#weightNeto").val();
-                 		break;
-                 	case 3:
-                 		cell1.innerHTML = $("#height").val();
-                 		break;
-                 	case 4:
+                 	cell1.innerHTML = $("#partName").val();
+                 	break;
+                  case 1:
+               		cell1.innerHTML = $("#material").val();
+                 	break;
+                  case 2:
+                 	cell1.innerHTML = $("#quantity").val();
+                 	break;
+                  case 3:
+                 	cell1.innerHTML = $("#weightNeto").val();
+                 	break;
+                  case 4:
+                    cell1.innerHTML = formData.weightNetoTotal;
+                    break;
+                  case 5:
+                 	cell1.innerHTML = $("#height").val();
+                 	break;
+                  case 6:
                		cell1.innerHTML = $("#leng").val();
-                 		break;
-                 	case 5:
-                 		cell1.innerHTML = $("#thickness").val();
-                 		break;
-                 	case 6:
-                 		cell1.innerHTML = formData.weightBruto;
-                 		break;
-                    default:
-                 		cell1.innerHTML = "Error";
-                 		break;
+                 	break;
+                  case 7:
+                 	cell1.innerHTML = $("#thickness").val();
+                 	break;
+                  case 8:
+                 	cell1.innerHTML = formData.weightBruto;
+                 	break;
+                  case 9:
+                    cell1.innerHTML = formData.weightBrutoTotal;
+                    break;
+                  default:
+                 	cell1.innerHTML = "Error";
+                 	break;
           }
         }
       }
 
+      function brutoCalculation(){
+        return ($("#thickness").val() /1000) * ($("#height").val()/1000) *  ($("#leng").val()/1000 ) * 7850
+       }
+
       function resetData(){
               $("#partName").val(""),
               $("#material").val(""),
+              $("#quantity").val(""),
               $("#weightNeto").val(""),
               $("#height").val(""),
               $("#leng").val(""),
