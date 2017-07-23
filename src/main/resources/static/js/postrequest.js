@@ -1,12 +1,30 @@
+   var partArray = [];
+   var netoSum = 0;
+   var brutoSum = 0;
+
   $( document ).ready(function() {
 
   	var url = window.location;
-    var partArray = [];
 
-    $("#elementsInput").submit (function (event){
+
+    $("#trailerSubmit").submit (function (event){
         event.preventDefault();
-        ajaxPost();
+        ajaxTrailerPost();
     });
+
+    function ajaxTrailerPost() {
+        //PREP DATA FOR TRAILER
+
+        var trailerFormData = {
+            name: $("#name").val(),
+            orderTag : $("#orderTag").val(),
+            partList : partArray,
+            netoWeight : netoSum
+
+        }
+
+        console.log(netoSum);
+    }
 
 
   	// SUBMIT FORM FOR PARTS
@@ -17,13 +35,13 @@
 
       function ajaxPost(){
 
-          // PREP FORM DATA
+          // PREP FORM PART DATA
           var formData = {
               partName : $("#partName").val(),
               material : $("#material").val(),
               weightNeto : $("#weightNeto").val(),
               quantity : $("#quantity").val(),
-              weightNetoTotal : $("#weightNeto").val() * $("#quantity").val(),
+              weightNetoTotal : ($("#weightNeto").val() / 1000) * $("#quantity").val(),
               height : $("#height").val(),
               length : $("#leng").val(),
               thickness : $("#thickness").val(),
@@ -50,11 +68,20 @@
 
         fillTable(formData);
         partArray.push(formData);
+        netoSum += formData.weightNetoTotal;
+        brutoSum += formData.weightBrutoTotal;
+        writeSumPart("TOTAL NETO: ", netoSum, "TOTAL BRUTO", brutoSum);
+
         }
 
       	// Reset FormData after Posting
       	resetData();
 
+      }
+
+      function writeSumPart(text, sum, text2, sum2) {
+        document.getElementById("totalNeto").innerHTML = text + sum + " KG";
+        document.getElementById("totalBruto").innerHTML = text2 + sum2 + " KG";
       }
 
       function validateForm() {
@@ -86,7 +113,7 @@
                  	cell1.innerHTML = $("#weightNeto").val();
                  	break;
                   case 4:
-                    cell1.innerHTML = formData.weightNetoTotal;
+                    cell1.innerHTML = formData.weightNetoTotal.toFixed(2);
                     break;
                   case 5:
                  	cell1.innerHTML = $("#height").val();
@@ -119,8 +146,11 @@
               $("#material").val(""),
               $("#quantity").val(""),
               $("#weightNeto").val(""),
+              $("#weightNetoTotal").val(""),
               $("#height").val(""),
               $("#leng").val(""),
-              $("#thickness").val("")
+              $("#thickness").val(""),
+              $("#weightBruto").val(""),
+              $("#weightBrutoTotal").val("")
       }
   })
