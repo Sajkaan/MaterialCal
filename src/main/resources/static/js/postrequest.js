@@ -23,21 +23,22 @@
             brutoWeight : brutoSum
         }
 
-        testy.push(trailerFormData);
+        if(validateTrailerForm(trailerFormData) == true) {
 
-        $.ajax({
-        type : "POST",
-        contentType : "application/json",
-        url : url + "/postTrailer",
-        data : JSON.stringify(trailerFormData),
-        dataType : 'json',
-        success : function(result) {
-        console.log(result);
-        },
-        error : function(e) {
-            console.log("ERROR: ", e);
-            }
-        });
+            $.ajax({
+            type : "POST",
+            contentType : "application/json",
+            url : url + "/postTrailer",
+            data : JSON.stringify(trailerFormData),
+            dataType : 'json',
+            success : function(result) {
+            console.log(result);
+            },
+            error : function(e) {
+                console.log("ERROR: ", e);
+                }
+            });
+        }
     }
 
 
@@ -55,7 +56,7 @@
               material : $("#material").val(),
               weightNeto : $("#weightNeto").val(),
               quantity : $("#quantity").val(),
-              weightNetoTotal : (($("#weightNeto").val() / 1000) * $("#quantity").val()).toFixed,
+              weightNetoTotal : (($("#weightNeto").val() / 1000) * $("#quantity").val()),
               height : $("#height").val(),
               length : $("#leng").val(),
               thickness : $("#thickness").val(),
@@ -85,6 +86,7 @@
         fillTable(formData);
         netoSum += formData.weightNetoTotal;
         brutoSum += formData.weightBrutoTotal;
+
         writeSumPart("TOTAL NETO: ", netoSum, "TOTAL BRUTO: ", brutoSum);
 
         }
@@ -107,6 +109,16 @@
       	    return true;
       	}
       }
+
+      function validateTrailerForm(trailerFormData) {
+      	if ( trailerFormData.name == "" || trailerFormData.orderTag == "" ||
+      	     trailerFormData.partList.length < 1 ) {
+      		return false;
+      	} else {
+      	    return true;
+      	}
+      }
+
 
       function fillTable(formData) {
       	var table = document.getElementById("tab");
