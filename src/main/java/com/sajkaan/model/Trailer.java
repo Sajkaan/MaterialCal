@@ -18,8 +18,8 @@ public class Trailer {
     @NotNull
     private String orderTag;
 
-    @ManyToMany
-    private List<Part> partList = new ArrayList<>();
+    @OneToMany
+    private List<Part> partList;
 
     private double netoWeight;
 

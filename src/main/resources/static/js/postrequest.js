@@ -1,7 +1,7 @@
    var partArray = [];
    var netoSum = 0;
    var brutoSum = 0;
-
+   var testy = [];
   $( document ).ready(function() {
 
   	var url = window.location;
@@ -19,11 +19,25 @@
             name: $("#name").val(),
             orderTag : $("#orderTag").val(),
             partList : partArray,
-            netoWeight : netoSum
-
+            netoWeight : netoSum,
+            brutoWeight : brutoSum
         }
 
-        console.log(netoSum);
+        testy.push(trailerFormData);
+
+        $.ajax({
+        type : "POST",
+        contentType : "application/json",
+        url : url + "/postTrailer",
+        data : JSON.stringify(trailerFormData),
+        dataType : 'json',
+        success : function(result) {
+        console.log(result);
+        },
+        error : function(e) {
+            console.log("ERROR: ", e);
+            }
+        });
     }
 
 
@@ -60,6 +74,8 @@
             dataType : 'json',
             success : function(result) {
                 console.log(result);
+                var storedPart = result.object;
+                partArray.push(storedPart);
             },
               	error : function(e) {
        	    		console.log("ERROR: ", e);
@@ -67,10 +83,9 @@
            	});
 
         fillTable(formData);
-        partArray.push(formData);
         netoSum += formData.weightNetoTotal;
         brutoSum += formData.weightBrutoTotal;
-        writeSumPart("TOTAL NETO: ", netoSum, "TOTAL BRUTO", brutoSum);
+        writeSumPart("TOTAL NETO: ", netoSum, "TOTAL BRUTO: ", brutoSum);
 
         }
 
@@ -80,8 +95,8 @@
       }
 
       function writeSumPart(text, sum, text2, sum2) {
-        document.getElementById("totalNeto").innerHTML = text + sum + " KG";
-        document.getElementById("totalBruto").innerHTML = text2 + sum2 + " KG";
+        document.getElementById("totalNeto").innerHTML = text + sum.toFixed(2) + " KG";
+        document.getElementById("totalBruto").innerHTML = text2 + sum2.toFixed(2) + " KG";
       }
 
       function validateForm() {
@@ -146,7 +161,7 @@
               $("#material").val(""),
               $("#quantity").val(""),
               $("#weightNeto").val(""),
-              $("#weightNetoTotal").val(""),
+              $("#weightNetoTotal").val(0),
               $("#height").val(""),
               $("#leng").val(""),
               $("#thickness").val(""),

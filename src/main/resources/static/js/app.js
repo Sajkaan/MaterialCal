@@ -11,6 +11,7 @@ if( $("#height").val() != "" && $("#leng").val() != "" && $("#thickness").val() 
     }
 }
 
+
 function brutoCalculation(){
   return ($("#thickness").val() /1000) * ($("#height").val()/1000) *  ($("#leng").val()/1000 ) * 7850
 }
