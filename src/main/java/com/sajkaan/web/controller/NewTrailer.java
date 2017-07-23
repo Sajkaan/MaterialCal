@@ -37,4 +37,16 @@ public class NewTrailer {
         return "find";
     }
 
+    @RequestMapping("/editTrailer")
+    public String editTrailer(Model model) {
+        return "edit";
+    }
+
+    @RequestMapping("/deleteTrailer")
+    public String deleteTrailer(Model model) {
+        return "delete";
+    }
+
+
+
 }
