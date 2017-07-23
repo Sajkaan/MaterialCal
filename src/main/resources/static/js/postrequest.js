@@ -55,7 +55,7 @@
               material : $("#material").val(),
               weightNeto : $("#weightNeto").val(),
               quantity : $("#quantity").val(),
-              weightNetoTotal : ($("#weightNeto").val() / 1000) * $("#quantity").val(),
+              weightNetoTotal : (($("#weightNeto").val() / 1000) * $("#quantity").val()).toFixed,
               height : $("#height").val(),
               length : $("#leng").val(),
               thickness : $("#thickness").val(),
