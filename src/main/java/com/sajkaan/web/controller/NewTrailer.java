@@ -28,11 +28,13 @@ public class NewTrailer {
 
     @RequestMapping("/newTrailer")
     public String newTrailerAdding(Model model){
-
-        if(!model.containsAttribute("part")) {
-            model.addAttribute("part", new Part());
-        }
         return "new";
+    }
+
+    @RequestMapping("/findTrailer")
+    public String findTrailer(Model model) {
+
+        return "find";
     }
 
 }
