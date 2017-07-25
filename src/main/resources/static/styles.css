@@ -190,6 +190,16 @@
         background: lemonchiffon;
       }
 
+      #findHeader {
+        font-family:Slabo;
+        margin-left:40%;
+      }
+
+      #searchBar {
+        margin-left:35%;
+        width:200px;
+      }
+
       #elementsInput {
 
       }
